@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-size: 13px;
+  background-color: var(--Light-grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: min(95%, 75rem);
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  border-radius: 15px;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-top > * {
+  margin-right: 20px;
+}
+
+.card-top img {
+  border-radius: 50%;
+  width: 35px;
+  border: 2px solid white;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+}
+.title {
+  opacity: 0.5;
+  color: var(--Light-gray);
+}
+
+.card-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-detail {
+  margin-top: 0rem;
+  line-height: 1.5;
+  color: var(--Light-gray);
+}
+
+.card-1 {
+  background-color: var(--Moderate-violet);
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+}
+
+.card-1,
+.card-2,
+.card-5 .card-heading {
+  color: var(--White);
+}
+
+.card-2 {
+  background-color: var(--Very-dark-grayish-blue);
+}
+
+.card-3,
+.card-4 {
+  background-color: var(--White);
+  color: var(--Very-dark-grayish-blue);
+}
+.card-3 .name,
+.card-4 .name {
+  color: var(--Very-dark-grayish-blue);
+}
+
+.card-5 {
+  background-color: var(--Very-dark-blackish-blue);
+}
+.card-5 img {
+  border: 2px solid var(--Moderate-violet);
+}
+
+.card-3 .card-detail,
+.card-4 .card-detail {
+  color: var(--Very-dark-grayish-blue);
+}
+
+@media (min-width: 660px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, min-content);
+  }
+  .card-1 {
+    grid-column: span 4;
+  }
+  .card-3 {
+    grid-column: 4;
+    grid-row: 2 / 4;
+  }
+  .card-5 {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 50em) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+  }
+  .card-1 {
+    grid-column: span 2;
+  }
+  .card-3 {
+    grid-column: 4;
+    grid-row: 1 / -1;
+  }
+  .card-5 {
+    grid-column: span 2;
+  }
+}
