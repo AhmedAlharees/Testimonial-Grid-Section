@@ -40,6 +40,11 @@ main {
   display: flex;
   flex-direction: column;
   padding: 30px 40px;
+  box-shadow: 10px 15px 15px lightgray;
+  transition: .3s;
+}
+.card:hover{
+    box-shadow: 20px 20px 20px rgb(145, 145, 145);
 }
 
 .card-top {
